@@ -4,7 +4,7 @@ public class Pemilihan2Percobaan2_21 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int pilihan_menu;
-        String member;
+        String member, payment_metode;
         double diskon = 0, total_bayar, harga = 0;
 
         System.out.println("-------------------------");
@@ -19,10 +19,14 @@ public class Pemilihan2Percobaan2_21 {
         input.nextLine();
         System.out.print("Apakah punya member (y/n) ? = ");
         member = input.nextLine();
+        System.out.print("Metode pembayaran (qris/cash)  = ");
+        payment_metode = input.nextLine();
         System.out.println("-------------------------");
         input.close();
+        System.out.println("======= STRUK PEMBAYARAN ======= \n");
 
-        if (member.equals("y")) {
+        total_bayar = 0;
+        if (member.equalsIgnoreCase("y")) {
             diskon = 0.1;
             System.out.println("Mendapatkan Diskon 10%");
             if (pilihan_menu == 1) {
@@ -39,8 +43,9 @@ public class Pemilihan2Percobaan2_21 {
                 return;
             }
             total_bayar = harga - (harga * diskon);
-            System.out.println("Total bayar dengan diskon : " + total_bayar);
+
         } else if (member.equalsIgnoreCase("n")) {
+
             System.out.println("Mencapatkan Diskon 10%");
             if (pilihan_menu == 1) {
                 harga = 14000;
@@ -55,8 +60,18 @@ public class Pemilihan2Percobaan2_21 {
                 System.out.println("Masukan Pilihan menu dengan benar");
                 return;
             }
-            System.out.println("Total bayar dengan diskon : " + harga);
+            total_bayar = harga;
 
         }
+        double final_payment = 0;
+        if (payment_metode.equalsIgnoreCase("qris")) {
+            final_payment = total_bayar - 1000;
+        } else {
+            final_payment = total_bayar;
+        }
+        System.out.println("Member \t\t :" + member);
+        System.out.println("Metode bayar  \t: " + payment_metode);
+        System.out.println("Total bayar  \t: " + final_payment);
+
     }
 }
