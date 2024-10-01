@@ -24,7 +24,7 @@ public class Pemilihan2Percobaan2_21 {
 
         if (member.equals("y")) {
             diskon = 0.1;
-            System.out.println("Mencapatkan Diskon 10%");
+            System.out.println("Mendapatkan Diskon 10%");
             if (pilihan_menu == 1) {
                 harga = 14000;
                 System.out.println("Harga Risbowl : " + harga);
