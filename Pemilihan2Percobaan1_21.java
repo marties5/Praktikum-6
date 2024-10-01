@@ -7,11 +7,28 @@ public class Pemilihan2Percobaan1_21 {
         System.out.println("====== Menghitung Tahun Kabisat ======= \n");
         System.out.print("Masukan tahun : ");
         tahun = input.nextInt();
+
+        // marties first code
+        // if (tahun % 4 == 0) {
+        // if (tahun % 100 != 0) {
+        // System.out.println(tahun + " Adalah Tahun kabisat");
+        // } else {
+        // System.out.println(tahun + " Bukan Tahun kabisat");
+        // }
+        // } else {
+        // System.out.println(tahun + " Bukan Tahun kabisat");
+        // }
+
+        // marties second code
         if (tahun % 4 == 0) {
-            if (tahun % 100 != 0) {
-                System.out.println(tahun + " Adalah Tahun kabisat");
+            if (tahun % 100 == 0) {
+                if (tahun % 400 == 0) {
+                    System.out.println(tahun + " Adalah Tahun kabisat");
+                } else {
+                    System.out.println(tahun + " Bukan Tahun kabisat");
+                }
             } else {
-                System.out.println(tahun + " Bukan Tahun kabisat");
+                System.out.println(tahun + " Adalah Tahun kabisat");
             }
         } else {
             System.out.println(tahun + " Bukan Tahun kabisat");
